@@ -3,9 +3,6 @@ import scrapy
 from cookieManager import CookieManager
 
 
-glob_id = 0
-
-
 class LinkedinSpider(scrapy.Spider):
     name = 'linkedin'
 
@@ -27,9 +24,6 @@ class LinkedinSpider(scrapy.Spider):
         typec = self.response.css('dd.org-page-details__definition-text t-14 t-black--light t-normal::text').get()
         founded = self.response.css('dd.org-page-details__definition-text t-14 t-black--light t-normal::text').get()
         specialities = self.response.css('dd.org-page-details__definition-text t-14 t-black--light t-normal').get()
-
-        global glob_id
-        glob_id = glob_id + 1
 
         dic = dict()
         dic['name'] = name

@@ -42,6 +42,11 @@ def main():
     print(str(links_esn_lyon))
     print(str(links_ssi_lyon))
 
+    # at this point it could be used also the scrapy spider web scraper but you need to retrive cookie and send it in
+    # request message
+    # Scraper(links)
+
+    # or continuing to use selenium to retrive the data from linkedin
     page.retrieve_data(links_esn_lyon, 'esn_lyon.xlsx')
     page.retrieve_data(links_ssi_lyon, 'ssi_lyon.xlsx')
 

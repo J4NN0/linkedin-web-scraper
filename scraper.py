@@ -1,5 +1,5 @@
 from scrapy.crawler import CrawlerProcess
-from scrapy_spider.scrapy_spider.spiders.linkedin import LinkedinSpider
+from linkedin import LinkedinSpider
 
 
 class Scraper:
