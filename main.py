@@ -5,16 +5,6 @@ from browserNavigator import BrowserNavigator
 from cookieManager import CookieManager
 
 
-def join_list(list1, list2):
-    joined_list = []
-
-    for l1 in list1:
-        if l1 in list2:
-            joined_list.append(l1)
-
-    return joined_list
-
-
 def main():
     config = configparser.ConfigParser()
     config.read('config.ini')
@@ -36,23 +26,16 @@ def main():
 
     CookieManager.save_cookies(browser)
 
-    links_esn_lyon = page.get_companies_name('https://www.linkedin.com/search/results/companies/?keywords=ESN%20Lyon')
-    links_ssi_lyon = page.get_companies_name('https://www.linkedin.com/search/results/companies/?keywords=SSII%20Lyon')
+    links_company_lyon = page.get_companies_name('https://www.linkedin.com/search/results/companies/?keywords=Lyon')
 
-    print(str(links_esn_lyon))
-    print(str(links_ssi_lyon))
+    print(str(links_company_lyon))
 
     # at this point it could be used also the scrapy spider web scraper but you need to retrive cookie and send it in
     # request message
     # Scraper(links)
 
     # or continuing to use selenium to retrive the data from linkedin
-    page.retrieve_data(links_esn_lyon, 'esn_lyon.xlsx')
-    page.retrieve_data(links_ssi_lyon, 'ssi_lyon.xlsx')
-
-    joined_links = join_list(links_esn_lyon, links_ssi_lyon)
-    print(str(joined_links))
-    page.retrieve_data(joined_links, 'join_ssi_lyon.xlsx')
+    page.retrieve_data(links_company_lyon, 'lyon_companies.xlsx')
 
     print("Closing browser...")
     browser.close()

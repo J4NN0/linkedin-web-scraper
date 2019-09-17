@@ -1,6 +1,10 @@
 # Mac OS hidden files
 .DS_Store
 
+# Files
+cookie.json
+*.xls
+
 # Browser drivers
 chromedriver
 

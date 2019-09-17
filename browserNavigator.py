@@ -1,5 +1,6 @@
 import time
 import configparser
+import numpy as np
 from selenium.common.exceptions import NoSuchElementException
 from manageExcelFile import ManageExcelFile
 
@@ -7,12 +8,28 @@ config = configparser.ConfigParser()
 config.read('config.ini')
 
 
+CATEGORY_WHITELIST = ['information technology & services', 'logiciels informatiques', 'information technology and services']
+
+
 def fetch_data(list_companies_links):
     list_companies_links = list(dict.fromkeys(list_companies_links))  # remove duplicates
+
+    # re-adjusting the link in order to retrieve data after
     for i in range(len(list_companies_links)):
         list_companies_links[i] += "about/"
 
     return list_companies_links
+
+
+def parse_data(links, categories):
+    whitelist_links = []
+
+    # filtering company for category
+    for i in range(len(categories)):
+        if True in np.in1d(CATEGORY_WHITELIST, categories[i].text.lower()):
+            whitelist_links.append(links[i])
+
+    return whitelist_links
 
 
 class BrowserNavigator:
@@ -102,16 +119,22 @@ class BrowserNavigator:
         print("[!] " + n_companies + " companies has been found")
 
         self.scroll_page_to_end()
-        n_pages = len(self.browser.find_elements_by_css_selector('li.artdeco-pagination__indicator.artdeco'
-                                                                 '-pagination__indicator--number'))
-        print("Tot pages: " + str(n_pages))
+        pages = self.browser.find_elements_by_css_selector('li.artdeco-pagination__indicator.artdeco'
+                                                           '-pagination__indicator--number')
+        n_pages = pages[-1].text
+        print("[!] Tot pages: " + str(n_pages))
 
         print("[+] Saving companies links...")
         list_elements_companies_links = self.browser.find_elements_by_css_selector('a.search-result__result-link'
                                                                                    '.ember-view')
-        list_companies_links = tuple([element.get_attribute('href') for element in list_elements_companies_links])
+        list_elements_companies_category = self.browser.find_elements_by_css_selector('p.subline-level-1.t-14.t-black'
+                                                                                      '.t-normal.search-result__truncate')
 
-        for i in range(1, n_pages):
+        list_companies_links = tuple([element.get_attribute('href') for element in list_elements_companies_links])
+        list_companies_links = fetch_data(list_companies_links)
+        list_companies_links = parse_data(list_companies_links, list_elements_companies_category)
+
+        for i in range(1, int(n_pages)):
             print("Parsing page " + str(i+1) + " over " + str(n_pages))
 
             next_page = base_link + self.BASE_NEXT_PAGE + str(i+1)
@@ -121,9 +144,13 @@ class BrowserNavigator:
 
             list_elements_companies_links = self.browser.find_elements_by_css_selector('a.search-result__result-link'
                                                                                        '.ember-view')
-            list_companies_links += tuple([element.get_attribute('href') for element in list_elements_companies_links])
+            list_elements_companies_category = self.browser.find_elements_by_css_selector('p.subline-level-1.t-14.t'
+                                                                                          '-black.t-normal.search-result__truncate')
 
-        list_companies_links = fetch_data(list_companies_links)
+            list_elements_companies_links = tuple([element.get_attribute('href') for element in list_elements_companies_links])
+            list_elements_companies_links = fetch_data(list_elements_companies_links)
+            list_companies_links += parse_data(list_elements_companies_links, list_elements_companies_category)
+            print(list_companies_links)
 
         return list_companies_links
 
@@ -160,7 +187,7 @@ class BrowserNavigator:
     def _wait_to_find_element_by_css(self, css_selector):
         sleep_time = self.sleep_time
         for attempts in range(self.max_loading_attempts):
-            print("- Attempt n°" + str(attempts + 1) + ". Current page: " + self.browser.current_url +
+            print("Attempt n°" + str(attempts + 1) + ". Current page: " + self.browser.current_url +
                   " element searched: " + css_selector)
 
             time.sleep(sleep_time)
