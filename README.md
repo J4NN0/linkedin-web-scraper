@@ -1,5 +1,16 @@
+# DISCLAIMER
+
+Any actions and or activities related to the material contained within this repo is solely your responsibility. The misuse of the information in this repo can result in criminal charges brought against the company in question. The author will not be held responsible in the event any criminal charges be brought against any individuals misusing the information in this repo to break the law.
+
+As written in [Linkedin User Agreement](https://www.linkedin.com/legal/user-agreement): *you agree you will not use*
+    
+   - bots or other automated methods to access the Services, add or download contacts, send or redirect messages.
+   
+I do not promote, encourage, support or excite any illegal activity or hacking without written permission in general.
+
 # linkedin-web-scraper
-Python Web Scraper for LinkedIn companies. It performs search for companies to collect data about them. Then it stores the collected information into an .xls file.
+
+Python Web Scraper for LinkedIn companies. Scraping data from web browser and collect it into an .xls file.
 
 # Usage
 
@@ -11,7 +22,7 @@ After that, you can run *retrive_data(...)* that requires the array with the lin
 
 # Issues
 
-It could happen that, after the loggin phase, LinkedIn could ask you to perform some operations (such as recaptcha, etc.) instead of rediricet you to the feed (https://www.linkedin.com/feed/) page. 
+It could happen that, after the loggin phase, LinkedIn could ask you to perform some operations instead of rediricet you to the feed (https://www.linkedin.com/feed/) page. 
 
 In this case just:
   1. Stop the script
