@@ -9,9 +9,9 @@ As written in [Linkedin User Agreement](https://www.linkedin.com/legal/user-agre
 ### Terms And Conditions:
 
 - I do not promote, encourage, support or excite any illegal activity or hacking without written permission in general. The repo and author of the repo is no way responsible for any misuse of the information.
-- "linkedin-web-scraper" is just a terms that represents the name of the repo and is not a repo that provides any illegal information. This is not a repo that promotes hacking/cracking/software piracy.
+- "linkedin-web-scraper" is just a terms that represents the name of the repo and is not a repo that provides any illegal information.
 - This repo is totally meant for providing information on Computer Software, Computer Programming and other related topics.
-- TheSoftware's and Scripts provided by the repo should only be used for education purposes. The repo or the author can not be held responsible for the misuse of them by the users.
+- The Software's and Scripts provided by the repo should only be used for education purposes. The repo or the author can not be held responsible for the misuse of them by the users.
 - I am not responsible for any direct or indirect damage caused due to the usage of the code provided on this site. All the information provided on this repo are for educational purposes only.
 
 # LinkedIn Web Scraper
