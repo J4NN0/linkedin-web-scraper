@@ -12,9 +12,7 @@ As written in [Linkedin User Agreement](https://www.linkedin.com/legal/user-agre
 - "linkedin-web-scraper" is just a terms that represents the name of the repo and is not a repo that provides any illegal information. This is not a repo that promotes hacking/cracking/software piracy.
 - This repo is totally meant for providing information on Computer Software, Computer Programming and other related topics.
 - TheSoftware's and Scripts provided by the repo should only be used for education purposes. The repo or the author can not be held responsible for the misuse of them by the users.
-- I am not responsible for any direct or indirect damage caused due to the usage of the code provided on this site.
-
-**All the information provided on this repo are for educational purposes only.**
+- I am not responsible for any direct or indirect damage caused due to the usage of the code provided on this site. All the information provided on this repo are for educational purposes only.
 
 # LinkedIn Web Scraper
 
@@ -24,7 +22,7 @@ Python Web Scraper for LinkedIn companies. The script fully simulate an human ac
 - Overview 
 - Size
 - Website link
-- Size
+- Industry
 - etc.
 
 After collected the above information, these will be stored into an .xls file.
