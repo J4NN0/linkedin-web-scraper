@@ -27,6 +27,10 @@ Python Web Scraper for LinkedIn companies. The script fully simulate an human ac
 
 After collected the above information, these will be stored into an .xls file.
 
+### Demo
+
+[![Watch the video](https://img.youtube.com/vi/TKkJEo-4NTg/maxresdefault.jpg)](https://youtu.be/TKkJEo-4NTg)
+
 # Usage
 
 First of all, donwload the web driver you prefer (Firefox or Chrome) and put it inside the folder. Then put you credential inside the **config.ini** file and specify the web driver you donwloaded. Also others kind of parameters can be setted. 
