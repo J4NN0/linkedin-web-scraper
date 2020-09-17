@@ -1,0 +1,4 @@
+selenium==3.141.0
+XlsxWriter==1.2.0
+openpyxl==3.0.5
+numpy==1.15.2
