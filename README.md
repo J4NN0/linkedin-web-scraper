@@ -33,13 +33,25 @@ After collected the above information, these will be stored into an .xls file.
 
 # Usage
 
-First of all, donwload the web driver you prefer (Firefox or Chrome) and put it inside the folder. Then put you credential inside the **config.ini** file and specify the web driver you donwloaded. Also others kind of parameters can be setted. 
+1. Install the needed components
+    
+        pip install -r requirements.txt
 
-The method *get_companies_name(...)* requires a link (in this case a link of a company) and will return an array of links in which each link is the page of the company.
+2. Donwload the web driver you prefer (either [Firefox](https://github.com/mozilla/geckodriver) or [Chrome](https://chromedriver.chromium.org/downloads)) and put it inside the folder. 
 
-After that, you can run *retrive_data(...)* that requires the array with the links and the name of the .xls file in which you want to store information that will be collected from each link for each company. 
+3. Put your credentials (username and password) inside the **config.ini** file and specify the web driver you donwloaded. Note that also others kind of parameters can be set.
 
-Class *ManageExcelFile* will handle the I/O operation for the .xls file.
+4. The method *get_companies_name(...)* requires a link in the format
+
+        https://www.linkedin.com/search/results/companies/?keywords=CITY
+        
+    For example: 
+  
+        https://www.linkedin.com/search/results/companies/?keywords=Lyon
+
+    and it will return an array of links in which each link is the page of the company.
+
+5. In the end, the method *retrive_data(...)*, which requires the array with the links and the name of the .xls file in which you want to store the data, will collect all the information from each link for each company.  The class *ManageExcelFile* will handle the I/O operation for the .xls file.
 
 # Issues
 
@@ -51,8 +63,7 @@ In this case just:
   3. Skip the required operation
   4. Re-run the code
 
-# Utility
+# Resources
 
-- [Chrome Webdriver](https://chromedriver.chromium.org/downloads)
 - [Selenium](https://selenium-python.readthedocs.io/installation.html)
 - [Scrapy](https://docs.scrapy.org/en/latest/intro/tutorial.html)
