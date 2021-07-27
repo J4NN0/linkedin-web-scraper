@@ -1,8 +1,8 @@
 import configparser
 import time
 from selenium import webdriver
-from browserNavigator import BrowserNavigator
-from cookieManager import CookieManager
+from BrowserNavigator.browserNavigator import BrowserNavigator
+from BrowserNavigator.cookieManager import CookieManager
 
 
 def main():

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import scrapy
-from cookieManager import CookieManager
+from BrowserNavigator.cookieManager import CookieManager
 
 
 class LinkedinSpider(scrapy.Spider):

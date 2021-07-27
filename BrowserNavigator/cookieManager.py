@@ -1,6 +1,6 @@
 import json
 from selenium import webdriver
-from browserNavigator import BrowserNavigator
+from BrowserNavigator.browserNavigator import BrowserNavigator
 
 
 class CookieManager:

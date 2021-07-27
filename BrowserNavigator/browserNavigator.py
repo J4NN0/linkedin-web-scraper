@@ -2,7 +2,7 @@ import time
 import configparser
 import numpy as np
 from selenium.common.exceptions import NoSuchElementException
-from manageExcelFile import ManageExcelFile
+from ExcelFileHandler.manageExcelFile import ManageExcelFile
 
 config = configparser.ConfigParser()
 config.read('config.ini')

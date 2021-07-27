@@ -16,7 +16,7 @@ As written in [Linkedin User Agreement](https://www.linkedin.com/legal/user-agre
 
 # LinkedIn Web Scraper
 
-Python Web Scraper for LinkedIn companies. The script fully simulate an human activity in order to get data from LinkedIn web pages. The purpose is store data from companies of a certain zone, such as:
+This is a LinkedIn Python Web Scraper for companies. The script fully simulate a human activity (using [Selenium](https://selenium-python.readthedocs.io) library) in order to get data from LinkedIn web pages. The purpose is store data from companies of a certain zone, such as:
 
 - Name 
 - Overview 
@@ -25,34 +25,40 @@ Python Web Scraper for LinkedIn companies. The script fully simulate an human ac
 - Industry
 - etc.
 
-After collected the above information, these will be stored into an .xls file.
+After collected the above information, these will be stored into an `.xls` file.
 
 ### Demo
 
 [![Watch the video](https://img.youtube.com/vi/TKkJEo-4NTg/maxresdefault.jpg)](https://youtu.be/TKkJEo-4NTg)
 
+# Table of Contents
+- [Usage](https://github.com/J4NN0/linkedin-web-scraper#usage)
+- [Troubleshooting](https://github.com/J4NN0/linkedin-web-scraper#troubleshooting)
+- [Resources](https://github.com/J4NN0/linkedin-web-scraper#resources)
+
 # Usage
 
-First of all, donwload the web driver you prefer (Firefox or Chrome) and put it inside the folder. Then put you credential inside the **config.ini** file and specify the web driver you donwloaded. Also others kind of parameters can be setted. 
+First of all, download the web driver you prefer (either [Firefox](https://github.com/mozilla/geckodriver/releases) or [Chrome](https://chromedriver.chromium.org/downloads)) and put it inside project folder. After that, put your credentials in `config.ini` file and specify the `webdriver` you have downloaded. Also, others kind of parameters can be set. 
 
-The method *get_companies_name(...)* requires a link (in this case a link of a company) and will return an array of links in which each link is the page of the company.
+Method `get_companies_name(...)` requires a link (in this case a link of a company) and will return an array of links in which each link is the LinkedIn company web page.
 
-After that, you can run *retrive_data(...)* that requires the array with the links and the name of the .xls file in which you want to store information that will be collected from each link for each company. 
+After that, you can run `retrieve_data(...)` that requires the array with the links and the name of the `.xls` file in which you want to store all the information that will be collected from each link for each company. 
 
-Class *ManageExcelFile* will handle the I/O operation for the .xls file.
+Class `ManageExcelFile` will handle the I/O operation to the `.xls` file.
 
-# Issues
+# Troubleshooting
 
-It could happen that, after the loggin phase, LinkedIn could ask you to perform some operations instead of rediricet you to the feed (https://www.linkedin.com/feed/) page. 
+It could happen that, after the logging phase, LinkedIn could ask you to perform some actions/operations (e.g. "I'm not a robot", etc.) instead of redirecting you to the feed (https://www.linkedin.com/feed/) page. 
 
-In this case just:
-  1. Stop the script
-  2. Log with a browser in your account
-  3. Skip the required operation
-  4. Re-run the code
+In this case:
+  1. Stop the script.
+  2. Log in with a browser in your account.
+  3. Skip the required actions.
+  4. Re-run the code.
 
-# Utility
+# Resources
 
 - [Chrome Webdriver](https://chromedriver.chromium.org/downloads)
+- [Firefox Webdriver](https://github.com/mozilla/geckodriver/releases)
 - [Selenium](https://selenium-python.readthedocs.io/installation.html)
 - [Scrapy](https://docs.scrapy.org/en/latest/intro/tutorial.html)
