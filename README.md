@@ -2,9 +2,7 @@
 
 Any actions and or activities related to the material contained within this repo is solely your responsibility. The misuse of the information in this repo can result in criminal charges brought against the company in question. The author will not be held responsible in the event any criminal charges be brought against any individuals misusing the information in this repo to break the law.
 
-As written in [Linkedin User Agreement](https://www.linkedin.com/legal/user-agreement): **you agree you will not use**
-    
-   - bots or other automated methods to access the Services, add or download contacts, send or redirect messages.
+As written in [Linkedin User Agreement](https://www.linkedin.com/legal/user-agreement): **you agree you will not use** [...] any bots or other automated methods to access the Services, add or download contacts, send or redirect messages.
    
 ### Terms And Conditions:
 
@@ -38,27 +36,43 @@ After collected the above information, these will be stored into an `.xls` file.
 
 # Usage
 
-First of all, download the web driver you prefer (either [Firefox](https://github.com/mozilla/geckodriver/releases) or [Chrome](https://chromedriver.chromium.org/downloads)) and put it inside project folder. After that, put your credentials in `config.ini` file and specify the `webdriver` you have downloaded. Also, others kind of parameters can be set. 
+1. Clone project:
 
-Method `get_companies_name(...)` requires a link (in this case a link of a company) and will return an array of links in which each link is the LinkedIn company web page.
+       git clone https://github.com/J4NN0/linkedin-web-scraper.git
+    
+2. Install requirements:
 
-After that, you can run `retrieve_data(...)` that requires the array with the links and the name of the `.xls` file in which you want to store all the information that will be collected from each link for each company. 
+       cd linkedin-web-scraper
+       pip install -r requirements.txt
+    
+3. Download the web driver you prefer (either [Firefox](https://github.com/mozilla/geckodriver/releases) or [Chrome](https://chromedriver.chromium.org/downloads)) and put it inside project folder. 
 
-Class `ManageExcelFile` will handle the I/O operation to the `.xls` file.
+4. Configure your credentials (i.e. your LinkedIn `username` and `password`) and specify the `webdriver` (you have downloaded in step `3`) in `config.ini` file. Also, others kind of parameters can be set.
+
+5. Method `get_companies_name(...)` requires a link (in this case a link of a company) and will return an array of links in which each link is the LinkedIn company web page: you need to [configure it from the code](https://github.com/J4NN0/linkedin-web-scraper/blob/master/main.py#L29). 
+
+6. After that, method `retrieve_data(...)` will handle everything by taking as input the array with the links - previous generated - and storing in a `.xls` [file all the information that will be collected](https://github.com/J4NN0/linkedin-web-scraper/blob/master/main.py#L38) from each link for each company. Class `ManageExcelFile` will handle the I/O operation to the `.xls` file.
+
+7. Run script:
+
+       python main.py
 
 # Troubleshooting
 
-It could happen that, after the logging phase, LinkedIn could ask you to perform some actions/operations (e.g. "I'm not a robot", etc.) instead of redirecting you to the feed (https://www.linkedin.com/feed/) page. 
+- It could happen that, after the logging phase, LinkedIn could ask you to perform some actions/operations (e.g. "I'm not a robot", etc.) instead of redirecting you to the feed (https://www.linkedin.com/feed/) page. 
 
-In this case:
-  1. Stop the script.
-  2. Log in with a browser in your account.
-  3. Skip the required actions.
-  4. Re-run the code.
+    In this case:
+    
+    1. Stop the script.
+    2. Log in with a browser in your account.
+    3. Skip the required actions.
+    4. Re-run the code.
+
+- If you face some issues using `Python 3.9` (e.g. on istalling dependencies), please try with `Pyton 3.7` or below (but not earlier version than `Python 3.0`).
 
 # Resources
 
+- [Selenium](https://selenium-python.readthedocs.io/installation.html)
 - [Chrome Webdriver](https://chromedriver.chromium.org/downloads)
 - [Firefox Webdriver](https://github.com/mozilla/geckodriver/releases)
-- [Selenium](https://selenium-python.readthedocs.io/installation.html)
 - [Scrapy](https://docs.scrapy.org/en/latest/intro/tutorial.html)
