@@ -17,7 +17,7 @@ def main():
     elif config['BROWSER']['WEBDRIVER'] == "Chrome":
         browser = webdriver.Chrome("./chromedriver")
     else:
-        print("Set in the config.in file as WEBDRIVER Firefox or Chrome. Restarting...")
+        print("Set in config.in file as WEBDRIVER either Firefox or Chrome. Restarting...")
         time.sleep(5)
         exit()
 
@@ -26,16 +26,16 @@ def main():
 
     CookieManager.save_cookies(browser)
 
-    links_company_lyon = page.get_companies_name('https://www.linkedin.com/search/results/companies/?keywords=Lyon')
+    links_company = page.get_companies_name(f"https://www.linkedin.com/search/results/companies/?keywords={config['COMPANIES']['CITY']}")
 
-    print(str(links_company_lyon))
+    print(str(links_company))
 
-    # at this point it could be used also the scrapy spider web scraper but you need to retrive cookie and send it in
+    # at this point it could be used also the scrapy spider web scraper but you need to retrieve cookie and send it in
     # request message
     # Scraper(links)
 
-    # or continuing to use selenium to retrive the data from linkedin
-    page.retrieve_data(links_company_lyon, 'lyon_companies.xlsx')
+    # or continuing to use selenium to retrieve the data from linkedin
+    page.retrieve_data(links_company, 'companies.xlsx')
 
     print("Closing browser...")
     browser.close()

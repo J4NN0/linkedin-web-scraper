@@ -1,17 +1,3 @@
-# DISCLAIMER
-
-Any actions and or activities related to the material contained within this repo is solely your responsibility. The misuse of the information in this repo can result in criminal charges brought against the company in question. The author will not be held responsible in the event any criminal charges be brought against any individuals misusing the information in this repo to break the law.
-
-As written in [Linkedin User Agreement](https://www.linkedin.com/legal/user-agreement): **you agree you will not use** [...] any bots or other automated methods to access the Services, add or download contacts, send or redirect messages.
-   
-### Terms And Conditions:
-
-- I do not promote, encourage, support or excite any illegal activity or hacking without written permission in general. The repo and author of the repo is no way responsible for any misuse of the information.
-- "linkedin-web-scraper" is just a terms that represents the name of the repo and is not a repo that provides any illegal information.
-- This repo is totally meant for providing information on Computer Software, Computer Programming and other related topics.
-- The Software's and Scripts provided by the repo should only be used for education purposes. The repo or the author can not be held responsible for the misuse of them by the users.
-- I am not responsible for any direct or indirect damage caused due to the usage of the code provided on this site. All the information provided on this repo are for educational purposes only.
-
 # LinkedIn Web Scraper
 
 This is a LinkedIn Python Web Scraper for companies. The script fully simulate a human activity (using [Selenium](https://selenium-python.readthedocs.io) library) in order to get data from LinkedIn web pages. The purpose is store data from companies of a certain zone, such as:
@@ -25,37 +11,53 @@ This is a LinkedIn Python Web Scraper for companies. The script fully simulate a
 
 After collected the above information, these will be stored into an `.xls` file.
 
+### Disclaimer
+
+Any actions and or activities related to the material contained within this repo is solely your responsibility. The misuse of the information in this repo can result in criminal charges brought against the company in question. The author will not be held responsible in the event any criminal charges be brought against any individuals misusing the information in this repo to break the law.
+
+As written in [Linkedin User Agreement](https://www.linkedin.com/legal/user-agreement): **you agree you will not use** [...] any bots or other automated methods to access the Services, add or download contacts, send or redirect messages.
+   
+### Terms And Conditions
+
+- I do not promote, encourage, support or excite any illegal activity or hacking without written permission in general. The repo and author of the repo is no way responsible for any misuse of the information.
+- "linkedin-web-scraper" is just a terms that represents the name of the repo and is not a repo that provides any illegal information.
+- This repo is totally meant for providing information on Computer Software, Computer Programming and other related topics.
+- The Software's and Scripts provided by the repo should only be used for education purposes. The repo or the author can not be held responsible for the misuse of them by the users.
+- I am not responsible for any direct or indirect damage caused due to the usage of the code provided on this site. All the information provided on this repo are for educational purposes only.
+
 ### Demo
 
 [![Watch the video](https://img.youtube.com/vi/TKkJEo-4NTg/maxresdefault.jpg)](https://youtu.be/TKkJEo-4NTg)
 
 # Table of Contents
+
 - [Usage](https://github.com/J4NN0/linkedin-web-scraper#usage)
 - [Troubleshooting](https://github.com/J4NN0/linkedin-web-scraper#troubleshooting)
 - [Resources](https://github.com/J4NN0/linkedin-web-scraper#resources)
 
 # Usage
 
-1. Clone project:
+1. Clone project
 
        git clone https://github.com/J4NN0/linkedin-web-scraper.git
-    
-2. Install requirements:
-
        cd linkedin-web-scraper
+    
+2. Install requirements
+
        pip install -r requirements.txt
     
-3. Download the web driver you prefer (either [Firefox](https://github.com/mozilla/geckodriver/releases) or [Chrome](https://chromedriver.chromium.org/downloads)) and put it inside project folder. 
+3. Download the web driver you prefer and put it inside project folder:
+    
+    - [Firefox](https://github.com/mozilla/geckodriver/releases)
+    - [Chrome](https://chromedriver.chromium.org/downloads)
 
-4. Configure your credentials (i.e. your LinkedIn `username` and `password`) and specify the `webdriver` (you have downloaded in step `3`) in `config.ini` file. Also, others kind of parameters can be set.
+4. In `config.ini` file, configure your LinkedIn credentials (LinkedIn `username` and `password`), the `webdriver` (downloaded on step `3`), and `city` from which companies have to be fetched. Also, others kind of parameters can be set.
 
-5. Method `get_companies_name(...)` requires a link (in this case a link of a company) and will return an array of links in which each link is the LinkedIn company web page: you need to [configure it from the code](https://github.com/J4NN0/linkedin-web-scraper/blob/master/main.py#L29). 
+5. Run script
 
-6. After that, method `retrieve_data(...)` will handle everything by taking as input the array with the links - previous generated - and storing in a `.xls` [file all the information that will be collected](https://github.com/J4NN0/linkedin-web-scraper/blob/master/main.py#L38) from each link for each company. Class `ManageExcelFile` will handle the I/O operation to the `.xls` file.
+       python3 main.py
 
-7. Run script:
-
-       python main.py
+   Data will be store into `companies.xlsx` file.
 
 # Troubleshooting
 
@@ -68,7 +70,7 @@ After collected the above information, these will be stored into an `.xls` file.
     3. Skip the required actions.
     4. Re-run the code.
 
-- If you face some issues using `Python 3.9` (e.g. on istalling dependencies), please try with `Pyton 3.7` or below (but not earlier version than `Python 3.0`).
+- If you face some issues using `Python 3.9` (e.g. on installing dependencies), please try with `Pyton 3.7` or below (but not earlier version than `Python 3.0`).
 
 # Resources
 
