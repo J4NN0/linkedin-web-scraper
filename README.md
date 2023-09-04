@@ -3,7 +3,7 @@
 This is a LinkedIn Python Web Scraper for companies. The script fully simulate a human activity (using [Selenium](https://selenium-python.readthedocs.io) library) in order to get data from LinkedIn web pages. The purpose is store data from companies of a certain zone, such as:
 
 - Name 
-- Overview 
+- Overview/Description
 - Size
 - Website link
 - Industry
@@ -51,7 +51,13 @@ As written in [Linkedin User Agreement](https://www.linkedin.com/legal/user-agre
     - [Firefox](https://github.com/mozilla/geckodriver/releases)
     - [Chrome](https://chromedriver.chromium.org/downloads)
 
-4. In `config.ini` file, configure your LinkedIn credentials (LinkedIn `username` and `password`), the `webdriver` (downloaded on step `3`), and `city` from which companies have to be fetched. Also, others kind of parameters can be set.
+4. Configure `config.ini` file:
+
+   - LinkedIn credentials i.e., `username` and `password`)
+   - The `webdriver` (downloaded on step `3`)
+   - And `city` from which companies have to be fetched.
+   
+   Note that also others kind of parameters can be set.
 
 5. Run script
 
@@ -70,7 +76,7 @@ As written in [Linkedin User Agreement](https://www.linkedin.com/legal/user-agre
     3. Skip the required actions.
     4. Re-run the code.
 
-- If you face some issues using `Python 3.9` (e.g. on installing dependencies), please try with `Pyton 3.7` or below (but not earlier version than `Python 3.0`).
+- If you face some issues using `Python 3.9` (e.g. on installing dependencies), please try with `Pyton 3.7` or below (but not earlier than version `Python 3.0`).
 
 # Resources
 
