@@ -51,11 +51,11 @@ As written in [Linkedin User Agreement](https://www.linkedin.com/legal/user-agre
     - [Firefox](https://github.com/mozilla/geckodriver/releases)
     - [Chrome](https://chromedriver.chromium.org/downloads)
 
-4. Configure `config.ini` file:
+4. Set missing configs in `config.ini`:
 
-   - LinkedIn credentials i.e., `username` and `password`)
-   - The `webdriver` (downloaded on step `3`)
-   - And `city` from which companies have to be fetched.
+   - LinkedIn credentials i.e., `EMAIL` and `PASSWORD`.
+   - The `WEBDRIVER` (downloaded on step `3`).
+   - And `CITY` from which companies have to be fetched.
    
    Note that also others kind of parameters can be set.
 
