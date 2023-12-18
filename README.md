@@ -31,9 +31,9 @@ As written in [Linkedin User Agreement](https://www.linkedin.com/legal/user-agre
 
 # Table of Contents
 
-- [Usage](https://github.com/J4NN0/linkedin-web-scraper#usage)
-- [Troubleshooting](https://github.com/J4NN0/linkedin-web-scraper#troubleshooting)
-- [Resources](https://github.com/J4NN0/linkedin-web-scraper#resources)
+- [Usage](#usage)
+- [Troubleshooting](#troubleshooting)
+- [Resources](#resources)
 
 # Usage
 
